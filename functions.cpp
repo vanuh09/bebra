@@ -34,7 +34,7 @@ int itc_count_char_in_str(char ch, string str){
 string itc_even_place(string str){
     string a = "";
     for(int i = 0; i < str.size(); i++){
-        if(i % 2 == 0){
+        if(i % 2 == 1){
             a += str[i];
         }
     }
@@ -71,11 +71,28 @@ string itc_slice_str(string str, int start, int end){
     return a;
 }
 
-bool itc_equal_reverse(string str){}
+bool itc_equal_reverse(string str){
+    int a;
+    bool b = true;
+    if (str.size() % 2 == 0){
+        a = str.size() / 2;
+    }
+    else{
+            a = (str.size() - 1) / 2;
+    }
+    for(int i = 0; i < a; i++){
+        if (str[i] != str[str.size() - i - 1]){
+            b = false;
+        }
+    }
+    return b;
+}
 
 string itc_cmp_str(string str1, string str2, int num){}
 
-int itc_find_str(string str1, string str2){}
+int itc_find_str(string str1, string str2){
+    return str1.find(str2);
+}
 
 string itc_three_str(string str1, string str2, string str3){}
 
